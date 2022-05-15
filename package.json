@@ -1,7 +1,7 @@
 {
-  "name": "tutorial-app-backend",
+  "name": "emr-backend",
   "version": "1.0.0",
-  "description": "Backend for a sample tutorial app that uses express",
+  "description": "Backend for a EMR",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
