@@ -158,6 +158,7 @@ exports.findByDoctorID = (req, res) => {
         });
 }
 
+/* - want to implement
 exports.findByDateTimeRange = (req,res) => {
-
-}
+    //req provides a timeDate range and the notes which fall in the range are returned
+}*/
