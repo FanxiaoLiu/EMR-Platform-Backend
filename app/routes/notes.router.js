@@ -16,16 +16,16 @@ module.exports = app => {
     // Jacob - I'm not sure what should follow this "/"
     router.get("/:doctorID", notes.findByDoctorID);
 
-    // Retrieve a single Tutorial with id
+    // Retrieve a single note with id
     router.get("/:id", notes.findOne);
 
-    // Update a Tutorial with id
+    // Update a note with id
     router.put("/:id", notes.update);
 
-    // Delete a Tutorial with id
+    // Delete a note with id
     router.delete("/:id", notes.delete);
 
-    // Create a new Tutorial
+    // Delete all notes
     router.delete("/", notes.deleteAll);
 
     app.use('/api/notes', router);
