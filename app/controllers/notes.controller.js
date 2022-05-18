@@ -38,7 +38,7 @@ exports.findAll = (req,res) => {
 
     Notes.find(condition)
         .then(data => {
-            res.send(Data);
+            res.send(data);
         })
         .catch(err => {
             res.status(500).send({
@@ -95,7 +95,7 @@ exports.delete = (req, res) => {
         .then(data => {
             if (!data) {
                 res.status(400).send({
-                    message: `Connot delete Notes with id=${id}. Maybe Note was note found!`
+                    message: `Connot delete Note with id=${id}. Maybe Note was not found!`
                 });
             } else {
                 res.send({
