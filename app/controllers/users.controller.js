@@ -2,7 +2,7 @@ const db = require("../models");
 const Users = db.users;
 
 //Create and Save a new Users
-exports.create = (req,res) => {
+exports.create = async (req,res) => {
     // validate request
     if (!req.body.doctorID) {
         res.status(400).send({ message: "doctorID cannot be empty!"});
@@ -100,7 +100,7 @@ exports.delete = (req, res) => {
                 });
             } else {
                 res.send({
-                    message: "Tutorial was deleted successfully!"
+                    message: "User was deleted successfully!"
                 });
             }
         })

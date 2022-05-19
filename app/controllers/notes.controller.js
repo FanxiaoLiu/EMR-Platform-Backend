@@ -2,7 +2,7 @@ const db = require("../models");
 const Notes = db.notes;
 
 //Create and Save a new Note
-exports.create = (req,res) => {
+exports.create = async (req,res) => {
     // validate request
     if (!req.body.noteContent) {
         res.status(400).send({ message: "Content cannot be empty!"});
@@ -99,7 +99,7 @@ exports.delete = (req, res) => {
                 });
             } else {
                 res.send({
-                    message: "Tutorial was deleted successfully!"
+                    message: "Note was deleted successfully!"
                 });
             }
         })
