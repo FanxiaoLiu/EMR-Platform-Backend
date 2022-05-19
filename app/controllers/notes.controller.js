@@ -2,7 +2,7 @@ const db = require("../models");
 const Notes = db.notes;
 
 //Create and Save a new Note
-exports.create = (req,res) => {
+exports.create = async (req,res) => {
     // validate request
     if (!req.body.noteContent) {
         res.status(400).send({ message: "Content cannot be empty!"});
@@ -38,7 +38,7 @@ exports.findAll = (req,res) => {
 
     Notes.find(condition)
         .then(data => {
-            res.send(Data);
+            res.send(data);
         })
         .catch(err => {
             res.status(500).send({
@@ -95,11 +95,11 @@ exports.delete = (req, res) => {
         .then(data => {
             if (!data) {
                 res.status(400).send({
-                    message: `Connot delete Notes with id=${id}. Maybe Note was note found!`
+                    message: `Connot delete Note with id=${id}. Maybe Note was not found!`
                 });
             } else {
                 res.send({
-                    message: "Tutorial was deleted successfully!"
+                    message: "Note was deleted successfully!"
                 });
             }
         })
