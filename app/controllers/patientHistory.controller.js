@@ -12,7 +12,7 @@ exports.create = async (req, res) => {
         patientHCNumber: req.body.patientHCNumber,
         allergies: req.body.allergies,
         prevConditions: req.body.prevConditions, // Array of objects
-        prevVissts: req.body.prevVisits,
+        prevVisits: req.body.prevVisits,
         immunizationHist: req.body.immunizationHist,
         imaging: req.body.imaging, // Objects
         notes: req.body.notes
