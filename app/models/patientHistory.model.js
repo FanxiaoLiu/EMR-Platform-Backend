@@ -7,7 +7,7 @@ module.exports = mongoose => {
             patientHCNumber: String,
             allergies: Array,
             prevConditions: Array, // Array of objects
-            prevVisists: Array,
+            prevVisits: Array,
             immunizationHist: Array,
             imaging: Array, // Objects
             notes: String
