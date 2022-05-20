@@ -20,12 +20,10 @@ module.exports = app => {
     // Delete all labRecords
     router.delete("/", labRecords.deleteAll);
 
-    // Retrieve all labRecords with specified patientHCNumber 
-    // Jacob: "I'm not sure what should follow this '/' "
+    // Retrieve all labRecords with specified patientHCNumber
     router.get("/:patientHCNumber ", labRecords.findByPatientHCNumber );
 
     // Retrieve all labRecords with specified dateIssued
-    // Jacob: "I'm not sure what should follow this '/' "
     router.get("/:dateIssued", labRecords.findByDateIssued);
 
     

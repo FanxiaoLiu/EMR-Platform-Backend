@@ -21,23 +21,18 @@ module.exports = app => {
     router.delete("/", users.deleteAll);
 
     // Retrieve all users with specified doctorID
-    // Jacob: "I'm not sure what should follow this '/' "
     router.get("/:doctorID", users.findByDoctorID);
 
     // Retrieve all users with specified signinID
-    // Jacob: "I'm not sure what should follow this '/' "
     router.get("/:signinID", users.findBySigninID);
 
     // Retrieve all users with specified password
-    // Jacob: "I'm not sure what should follow this '/' "
     router.get("/:password", users.findByPassword);
 
     // Retrieve all users with specified doctorFirstName
-    // Jacob: "I'm not sure what should follow this '/' "
     router.get("/:doctorFirstName", users.findByDoctorFirstName);
 
     // Retrieve all users with specified doctorLastName
-    // Jacob: "I'm not sure what should follow this '/' "
     router.get("/:doctorLastName", users.findByDoctorLastName);    
 
     app.use('/api/users', router);

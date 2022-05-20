@@ -9,11 +9,9 @@ module.exports = app => {
     router.get("/", notes.findAll);
 
     // Retrieve all notes with specified patientHCNumber
-    // Jacob - I'm not sure what should follow this "/"
     router.get("/:patientHCNumber", notes.findByPatientHCNumber);
 
     // Retrieve all notes with specified doctorID
-    // Jacob - I'm not sure what should follow this "/"
     router.get("/:doctorID", notes.findByDoctorID);
 
     // Retrieve a single note with id

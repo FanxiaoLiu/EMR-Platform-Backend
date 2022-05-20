@@ -128,7 +128,7 @@ exports.deleteAll = (req, res) => {
 
 // Find all Notes with the specified patientHCNumber in the request
 exports.findByPatientHCNumber = (req, res) => {
-    const patientHCNumber = req.body.patientHCNumber;
+    const patientHCNumber = req.params.patientHCNumber;
     Notes.find({ patientHCNumber: patientHCNumber})
         .then(data => {
             if (!data)
@@ -144,7 +144,7 @@ exports.findByPatientHCNumber = (req, res) => {
 
 // Find all Notes with the specified doctorID in the request
 exports.findByDoctorID = (req, res) => {
-    const doctorID = req.body.doctorID;
+    const doctorID = req.params.doctorID;
     Notes.find({ doctorID: doctorID})
         .then(data => {
             if (!data)
