@@ -4,7 +4,7 @@ module.exports = app => {
     router.post("/", pHist.create);
     router.get("/", pHist.findAll);
     router.get("/:patientHCNumber", pHist.findbyHC);
-    router.put("/:patientHCNumber", pHist.update);
+    router.put("/:patientHCNumber", pHist.updatebyHC);
     router.delete("/:patientHCNumber", pHist.delete);
     app.use('/api/patientHistory', router);
 };

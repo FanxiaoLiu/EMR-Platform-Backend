@@ -25,8 +25,15 @@ db.mongoose
       console.log("Cannot connect to the database!", err);
       process.exit();
    });
+
 require("./app/routes/tutorial.routes")(app);
 require("./app/routes/calendar.routes")(app);
+require("./app/routes/labRecords.routes")(app);
+require("./app/routes/notes.routes")(app);
+require("./app/routes/patientHistory.routes")(app);
+require("./app/routes/patients.routes")(app);
+require("./app/routes/users.routes")(app);
+
 // set port, listen for requests
 const PORT = process.env.PORT || 5000;
 
