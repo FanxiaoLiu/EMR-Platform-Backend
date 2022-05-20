@@ -129,7 +129,7 @@ exports.deleteAll = (req, res) => {
 
 // Find all Users with the specified doctorID in the request
 exports.findByDoctorID = (req, res) => {
-    const doctorID = req.body.doctorID;
+    const doctorID = req.params.doctorID;
     Users.find({ doctorID: doctorID})
         .then(data => {
             if (!data)
@@ -145,7 +145,7 @@ exports.findByDoctorID = (req, res) => {
 
 // Find all Users with the specified signinID in the request
 exports.findBySigninID = (req, res) => {
-    const signinID = req.body.signinID;
+    const signinID = req.params.signinID;
     Users.find({ signinID: signinID})
         .then(data => {
             if (!data)
@@ -161,7 +161,7 @@ exports.findBySigninID = (req, res) => {
 
 // Find all Users with the specified password in the request
 exports.findByPassword = (req, res) => {
-    const password = req.body.password;
+    const password = req.params.password;
     Users.find({ password: password})
         .then(data => {
             if (!data)
@@ -177,7 +177,7 @@ exports.findByPassword = (req, res) => {
 
 // Find all Users with the specified doctorFirstName in the request
 exports.findByDoctorFirstName = (req, res) => {
-    const doctorFirstName = req.body.doctorFirstName;
+    const doctorFirstName = req.params.doctorFirstName;
     Users.find({ doctorFirstName: doctorFirstName})
         .then(data => {
             if (!data)
@@ -193,7 +193,7 @@ exports.findByDoctorFirstName = (req, res) => {
 
 // Find all Users with the specified doctorLastName in the request
 exports.findByDoctorLastName = (req, res) => {
-    const doctorLastName = req.body.doctorLastName;
+    const doctorLastName = req.params.doctorLastName;
     Users.find({ doctorLastName: doctorLastName})
         .then(data => {
             if (!data)

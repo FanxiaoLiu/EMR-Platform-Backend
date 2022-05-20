@@ -128,7 +128,7 @@ exports.deleteAll = (req, res) => {
 
 // Find all LabRecords with the specified patientHCNumber in the request
 exports.findByPatientHCNumber = (req, res) => {
-    const patientHCNumber = req.body.patientHCNumber;
+    const patientHCNumber = req.params.patientHCNumber;
     LabRecords.find({ patientHCNumber: patientHCNumber})
         .then(data => {
             if (!data)
@@ -144,7 +144,7 @@ exports.findByPatientHCNumber = (req, res) => {
 
 // Find all LabRecords with the specified dateIssued in the request
 exports.findByDateIssued = (req, res) => {
-    const dateIssued = req.body.dateIssued;
+    const dateIssued = req.params.dateIssued;
     LabRecords.find({ dateIssued: dateIssued})
         .then(data => {
             if (!data)
