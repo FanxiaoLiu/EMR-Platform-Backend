@@ -3,7 +3,7 @@ const pHist = db.patientHistory;
 
 exports.create = async (req, res) => {
     // Validate request
-    if (!req.body.appointmentTitle) {
+    if (!req.body.patientHCNumber) {
        res.status(400).send({ message: "Content can not be empty!" });
        return;
     }
