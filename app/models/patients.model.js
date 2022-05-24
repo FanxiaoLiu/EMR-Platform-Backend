@@ -1,6 +1,6 @@
 module.exports = mongoose => {
     // https://mongoosejs.com/docs/api/model.html#model_Model
-    const patient = mongoose.model(
+    const patients = mongoose.model(
        "Patient",
        mongoose.Schema(
           {
@@ -18,6 +18,6 @@ module.exports = mongoose => {
           { timestamps: true }
        )
     );
-    return patient;
+    return patients;
  };
  

@@ -3,7 +3,7 @@ const patient = db.patients;
 
 exports.create = async (req, res) => {
     // Validate request
-    if (!req.body.appointmentTitle) {
+    if (!req.body.HCNumber) {
        res.status(400).send({ message: "Content can not be empty!" });
        return;
     }
