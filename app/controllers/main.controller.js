@@ -1,5 +1,5 @@
 const db = require("../models");
-const Sample = db.samples;
+const Sample = db.sample;
 
 // Create and Save a new Tutorial
 exports.create = async (req, res) => {
