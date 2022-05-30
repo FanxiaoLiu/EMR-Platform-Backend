@@ -143,10 +143,11 @@ exports.findByDoctorID = (req, res) => {
         });
 }
 
-// Find all Users with the specified signInID in the request
-exports.findBySignInID = (req, res) => {
-    const signInID = req.params.signInID;
-    Users.find({ signInID: signInID})
+// Find all Users with the specified signinID in the request
+exports.findBySigninID = (req, res) => {
+    const signinID = req.params.signinID;
+    const password = req.params.password;
+    Users.find({ signinID: signinID} && {password: password})
         .then(data => {
             if (!data)
                 res.status(404).send({ message: " User not found with signInID " + signInID})

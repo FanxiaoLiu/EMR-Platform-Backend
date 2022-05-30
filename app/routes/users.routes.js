@@ -25,6 +25,9 @@ module.exports = app => {
 
     // Retrieve all users with specified signInID
     router.get("/signInID/:signInID", users.findBySignInID);
+    
+    // Retrieve all users with specified signinID and password
+    router.get("/:signinID/:password", users.findBySigninID);
 
     // Retrieve all users with specified password
     router.get("/password/:password", users.findByPassword);
