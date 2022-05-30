@@ -21,10 +21,10 @@ module.exports = app => {
     router.delete("/", labRecords.deleteAll);
 
     // Retrieve all labRecords with specified patientHCNumber
-    router.get("/:patientHCNumber ", labRecords.findByPatientHCNumber );
+    router.get("/patientHCNumber/:patientHCNumber ", labRecords.findByPatientHCNumber );
 
     // Retrieve all labRecords with specified dateIssued
-    router.get("/:dateIssued", labRecords.findByDateIssued);
+    router.get("/dateIssued/:dateIssued", labRecords.findByDateIssued);
 
     
     app.use('/api/labRecords', router);

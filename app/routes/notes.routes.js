@@ -8,12 +8,6 @@ module.exports = app => {
     // Retrieve all notes
     router.get("/", notes.findAll);
 
-    // Retrieve all notes with specified patientHCNumber
-    router.get("/:patientHCNumber", notes.findByPatientHCNumber);
-
-    // Retrieve all notes with specified doctorID
-    router.get("/:doctorID", notes.findByDoctorID);
-
     // Retrieve a single note with id
     router.get("/:id", notes.findOne);
 
@@ -25,6 +19,13 @@ module.exports = app => {
 
     // Delete all notes
     router.delete("/", notes.deleteAll);
+
+    // Retrieve all notes with specified patientHCNumber
+    router.get("/patientHCNumber/:patientHCNumber", notes.findByPatientHCNumber);
+
+    // Retrieve all notes with specified doctorID
+    router.get("/doctorID/:doctorID", notes.findByDoctorID);
+
 
     app.use('/api/notes', router);
 };

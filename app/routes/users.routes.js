@@ -21,19 +21,19 @@ module.exports = app => {
     router.delete("/", users.deleteAll);
 
     // Retrieve all users with specified doctorID
-    router.get("/:doctorID", users.findByDoctorID);
+    router.get("/doctorID/:doctorID", users.findByDoctorID);
 
-    // Retrieve all users with specified signinID
-    router.get("/:signinID", users.findBySigninID);
+    // Retrieve all users with specified signInID
+    router.get("/signInID/:signInID", users.findBySignInID);
 
     // Retrieve all users with specified password
-    router.get("/:password", users.findByPassword);
+    router.get("/password/:password", users.findByPassword);
 
     // Retrieve all users with specified doctorFirstName
-    router.get("/:doctorFirstName", users.findByDoctorFirstName);
+    router.get("/doctorFirstName/:doctorFirstName", users.findByDoctorFirstName);
 
     // Retrieve all users with specified doctorLastName
-    router.get("/:doctorLastName", users.findByDoctorLastName);    
+    router.get("/doctorLastName/:doctorLastName", users.findByDoctorLastName);    
 
     app.use('/api/users', router);
 };
