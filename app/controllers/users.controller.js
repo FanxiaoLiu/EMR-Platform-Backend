@@ -12,7 +12,7 @@ exports.create = async (req,res) => {
     //create User
     const user = new Users ({
         doctorID: req.body.doctorID,
-        signinID: req.body.signinID,
+        signInID: req.body.signInID,
         password: req.body.password,
         doctorFirstName: req.body.doctorFirstName,
         doctorLastName: req.body.doctorLastName
@@ -143,19 +143,19 @@ exports.findByDoctorID = (req, res) => {
         });
 }
 
-// Find all Users with the specified signinID in the request
-exports.findBySigninID = (req, res) => {
-    const signinID = req.params.signinID;
-    Users.find({ signinID: signinID})
+// Find all Users with the specified signInID in the request
+exports.findBySignInID = (req, res) => {
+    const signInID = req.params.signInID;
+    Users.find({ signInID: signInID})
         .then(data => {
             if (!data)
-                res.status(404).send({ message: " User not found with signinID " + signinID})
+                res.status(404).send({ message: " User not found with signInID " + signInID})
             else res.send(data);
         })
         .catch(err => {
             res
                 .status(500)
-                .send({ message: "Error retrieving User with signinID=" + signinID})
+                .send({ message: "Error retrieving User with signInID=" + signInID})
         });
 }
 

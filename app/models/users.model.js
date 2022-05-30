@@ -5,7 +5,7 @@ module.exports = mongoose => {
        mongoose.Schema(
           {
              doctorID: String,
-             signinID: String,
+             signInID: String,
              password: String,
              doctorFirstName: String,
              doctorLastName: String
