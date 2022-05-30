@@ -144,7 +144,7 @@ exports.findByDoctorID = (req, res) => {
 }
 
 // Find all Users with the specified signinID in the request
-exports.findBySigninID = (req, res) => {
+exports.findBySignInID = (req, res) => {
     const signinID = req.params.signinID;
     const password = req.params.password;
     Users.find({ signinID: signinID} && {password: password})
