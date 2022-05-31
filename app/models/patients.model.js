@@ -9,11 +9,13 @@ module.exports = mongoose => {
              lastName: String,
              phoneNumber: String,
              email: String,
+             address: String,
              relations: Array, // Could be an object as well
              age: Number,
              sex: String,
              height: Number, // cm
              weight: Number, // kg
+             status: String,
           },
           { timestamps: true }
        )

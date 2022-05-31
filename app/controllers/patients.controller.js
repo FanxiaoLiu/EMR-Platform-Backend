@@ -14,11 +14,13 @@ exports.create = async (req, res) => {
         lastName: req.body.lastName,
         phoneNumber: req.body.phoneNumber,
         email: req.body.email,
+        address: req.body.address,
         relations: req.body.relations, // Could be an object as well
         age: req.body.age,
         sex: req.body.sex,
         height: req.body.height, // cm
         weight: req.body.weight, // kg
+        status: req.body.status
     });
     // Save Tutorial in the database
     try {
