@@ -16,6 +16,7 @@ module.exports = mongoose => {
              height: Number, // cm
              weight: Number, // kg
              status: String,
+             prescription: Array,
           },
           { timestamps: true }
        )

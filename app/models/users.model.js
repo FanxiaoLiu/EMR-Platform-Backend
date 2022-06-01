@@ -8,7 +8,8 @@ module.exports = mongoose => {
              signInID: String,
              password: String,
              doctorFirstName: String,
-             doctorLastName: String
+             doctorLastName: String,
+             isAdmin: Boolean,
           },
           { timestamps: true }
        )

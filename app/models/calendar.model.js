@@ -8,7 +8,8 @@ module.exports = mongoose => {
             dateTime: String,
             patientHCNumber: String,
             appointmentdesc: String,
-            notes: String
+            notes: String,
+            colour: String,
           },
           { timestamps: true }
        )

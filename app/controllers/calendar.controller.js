@@ -13,7 +13,8 @@ exports.create = async (req, res) => {
         dateTime: req.body.dateTime,
         patientHCNumber: req.body.patientHCNumber,
         appointmentdesc: req.body.appointmentdesc,
-        notes: req.body.notes
+        notes: req.body.notes,
+        colour: req.body.colour
     });
     // Save Tutorial in the database
     try {

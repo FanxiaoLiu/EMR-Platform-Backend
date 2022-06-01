@@ -15,7 +15,8 @@ exports.create = async (req,res) => {
         signInID: req.body.signInID,
         password: req.body.password,
         doctorFirstName: req.body.doctorFirstName,
-        doctorLastName: req.body.doctorLastName
+        doctorLastName: req.body.doctorLastName,
+        isAdmin: req.body.isAdmin,
     });
 
     //save User in the database
@@ -159,6 +160,7 @@ exports.findBySignInID = (req, res) => {
                 .send({ message: "Error retrieving User with signInID=" + signInID})
         });
 }
+
 
 // Find all Users with the specified password in the request
 exports.findByPassword = (req, res) => {

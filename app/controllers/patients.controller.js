@@ -20,7 +20,8 @@ exports.create = async (req, res) => {
         sex: req.body.sex,
         height: req.body.height, // cm
         weight: req.body.weight, // kg
-        status: req.body.status
+        status: req.body.status,
+        prescription: req.body.presc
     });
     // Save Tutorial in the database
     try {
@@ -79,6 +80,35 @@ exports.create = async (req, res) => {
                  .send({ message: "Error retrieving patient with hcNumber=" + hcNumber });
            });
     };
+
+    exports.addSinglePrescription = async (req,res) => {
+      if (!req.params.presc) {
+         return res.status(400).send({
+            message: "Data to update can not be empty!"
+         });
+      }
+      const id = req.params.HCNumber;
+      
+      let patient1 = await patient.findOne({ HCNumber: `${id}` });
+
+        
+      console.log(patient1);
+      const patient1Presc = patient1.prescription;
+      patient1Presc[patient1Presc.length] = req.params.presc;
+      patient.update({HCNumber: `${id}`}, {prescription: `${patient1Presc}`})
+         .then(data => {
+            if (!data) {
+               res.status(404).send({
+                  message: `Cannot update patient with id=${id}. Maybe Sample was not found!`
+               });
+            } else res.send({ message: "Patient was updated successfully." });
+         })
+         .catch(err => {
+            res.status(500).send({
+               message: "Error updating Sample with id=" + id
+            });
+         });
+    }
 
  exports.updatebyHC = (req, res) => {
     if (!req.body) {

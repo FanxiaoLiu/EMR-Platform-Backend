@@ -6,6 +6,7 @@ module.exports = app => {
     router.get("/:HCNumber", patient.findbyHC);
     router.put("/:HCNumber", patient.updatebyHC);
     router.delete("/:HCNumber", patient.delete);
+    router.put("/:HCNumber/:presc", patient.addSinglePrescription);
     app.use('/api/patient', router);
 };
  

@@ -22,6 +22,7 @@ module.exports = app => {
 
     // Retrieve all users with specified doctorID
     router.get("/doctorID/:doctorID", users.findByDoctorID);
+    router.get("/isAdmin/:isAdmin")
 
     // Retrieve all users with specified signinID and password
     router.get("/:signinID/:password", users.findBySignInID);
