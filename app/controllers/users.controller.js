@@ -151,13 +151,13 @@ exports.findBySignInID = (req, res) => {
     Users.find({ signinID: signinID} && {password: password})
         .then(data => {
             if (!data)
-                res.status(404).send({ message: " User not found with signInID " + signInID})
+                res.status(404).send({ message: " User not found with signInID " + signinID})
             else res.send(data);
         })
         .catch(err => {
             res
                 .status(500)
-                .send({ message: "Error retrieving User with signInID=" + signInID})
+                .send({ message: "Error retrieving User with signInID=" + signinID})
         });
 }
 
