@@ -37,12 +37,12 @@ require("./app/routes/users.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 5000;
 
-/* if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
    app.use(express.static(__dirname+'/dist/'));
    app.get('*', (req,res) => {
       res.sendFile(__dirname+'/dist/index.html')
    })
-} */
+}
 
 app.listen(PORT, () => {
    console.log(`Server is running on port ${PORT}.`);
